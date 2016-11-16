@@ -1,0 +1,14 @@
+<div class=e ncounters-page>
+    <h1>Recent Encounters</h1>
+    <h2>See an alien? Report it!</h2>
+
+    <ul class="encounters">
+        <li *ngFor="let encounter of marsEncounters">
+            <p> {{encounter.date}} - {{ encounter.atype }}</p>
+            <p>{{ encounter.action}}</p><br>
+        </li>
+    </ul>
+
+
+    <div class=" report-button " ng-click="$state.go( 'report') ">Report Encounter</div>
+</div>

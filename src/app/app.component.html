@@ -1,4 +1,10 @@
-<h1>
-  {{title}}
-  <app-list-test>Loading test...</app-list-test>
-</h1>
+<div class="app-container">
+    <router-outlet></router-outlet>
+</div>
+
+<nav>
+    <a routerLink="/register" routerLinkActive="active">register</a>
+    <a routerLink="/encounters" routerLinkActive="active">encounter</a>
+    <a routerLink="/report" routerLinkActive="active">report</a>
+
+</nav>
