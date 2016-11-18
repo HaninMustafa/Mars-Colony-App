@@ -7,7 +7,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 
 
 const notNone = (value) => {
-return value=== '(none)' ? false: true;
+return value === '(none)' ? false: true;
 }
 
 
@@ -36,13 +36,6 @@ export class RegisterComponent implements OnInit {
     });
    }
 
-
-  //  cantBe(value:string): ValidatorFn {
-  //    return (control: AbstractControl): {[key: string]: any} => {
-  //      return control.value === value ? {'cant be value': { value }}: null;
-
-  //    };
-  //  }
 
 tooOld(value:number):ValidatorFn{
     return (control: AbstractControl): {[key: string]: any} => {
