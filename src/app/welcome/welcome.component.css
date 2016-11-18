@@ -1,0 +1,5 @@
+.welcome-page {
+    background: url(http://planetary-science.org/wp-content/uploads/2014/12/Mars1_616.jpg);
+    background-size: cover,cover;
+    height: 100vh;
+}
