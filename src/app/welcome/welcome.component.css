@@ -1,5 +1,23 @@
 .welcome-page {
-    background: url(http://planetary-science.org/wp-content/uploads/2014/12/Mars1_616.jpg);
-    background-size: cover,cover;
-    height: 100vh;
+background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.8)), url(https://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2016/04/shutterstock_180470108-796x568.jpg);
+background-size: cover,cover;
+height: 100vh;
+text-align: center;
+color: white;
+display:flex;
+flex-direction: column;
+justify-content: space-around;
+}
+.welcome-header {
+    padding: 4rem 2rem;
+}
+
+.welcome-nav {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: linear-gradient(rgb(149, 149, 149),rgba(0, 0, 0, 0.1));
+    align-self: center;
+    cursor: pointer;
+    border: 0;
 }
