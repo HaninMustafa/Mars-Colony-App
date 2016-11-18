@@ -1,17 +1,21 @@
-<div>
+<div class="register-page">
     
-    <h1>Register</h1>
+    <h1 class="register-header">Register</h1>
 
     <form [formGroup]="registerForm" class="register-form" (ngSubmit)="onSubmit($event)">
-     
-        <input type="text"  placeholder="Enter Name" formControlName="name"/>
-        <input type="number"  placeholder="Enter Age" formControlName="age"/>
+    
+     <fieldset class="register-inputs">
 
-        <select formControlName="job_id">
-            <option [value]="NO_JOB_SELECTED">--Select occupation--</option>
+        <input class="register-input" type="text"  placeholder="Enter Name" formControlName="name"/>
+        <input class="register-input" type="number"  placeholder="Enter Age" formControlName="age"/>
+     
+        <select class="register-select" formControlName="job_id">
+            <option class="select1" [value]="NO_JOB_SELECTED">--Select Occupation--</option>
             <option *ngFor= "let job of marsJobs" [value]="job.id">{{job.name}}</option>
         </select>
-      
-        <button>Check in</button>
+    </fieldset>
+
+    <button>Check in</button>
+    
     </form>
 </div>

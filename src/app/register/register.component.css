@@ -1,3 +1,47 @@
 .register-form {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
+.register-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: black;
+    text-align: center;
+}
+.register-header {
+    color: white;
+    padding: 2rem 2rem;
+}
+.register-inputs {
+
+    display:flex;
+    flex-direction: column;
+}
+.register-input {
+
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    background: black;
+    color: white;
+}
+input::-webkit-input-placeholder {
+  color: red;
+}
+.register-select::-webkit-input-placeholder {
+  color: red;
+}
+.register-select {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+    background: black;
+    color: white;
+     -webkit-appearance: none;
+ }
+select.ng-pristine{
+    color: red;   
+ }

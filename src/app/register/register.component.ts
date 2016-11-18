@@ -4,6 +4,7 @@ import { NewColonist, Job } from '../models';
 import JobsService from '../services/jobs.service';
 import {cantBe} from '../shared/validators';
 import {Router, ActivatedRoute} from '@angular/router';
+import ColonistsService from '../services/colonists.service';
 
 
 const notNone = (value) => {
@@ -15,7 +16,7 @@ return value === '(none)' ? false: true;
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  providers:[JobsService]
+  providers:[JobsService, ColonistsService]
 })
 export class RegisterComponent implements OnInit {
 
@@ -24,7 +25,9 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   NO_JOB_SELECTED = '(none)';
 
-  constructor(jobService: JobsService,    private router: Router
+  constructor(jobService: JobsService,    
+  private colonistsService: ColonistsService,
+  private router: Router
 ) {
 
     
@@ -64,9 +67,18 @@ if(this.registerForm.invalid){
   const age = this.registerForm.get('age').value;
   const job_id = this.registerForm.get('job_id').value;
 
-  console.log('ok, lets register this new colonist:', new NewColonist(name, age ,job_id));
-  this.router.navigate(['/encounters']);
+const colonist = new NewColonist(name, age, job_id);
+
+   this.colonistsService.submitColonist(colonist).subscribe(
+     (colonist)=> {
+         localStorage.setItem('colonist_id', JSON.stringify(colonist.id));
+         this.router.navigate(['/encounters'])      
+         }, err => {
+     console.log(err)});
 
 }
 }
 }
+
+
+
