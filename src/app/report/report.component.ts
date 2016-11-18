@@ -58,12 +58,10 @@ onSubmit(event){
   this.encounterService.submitEncounter(encounter)
 
   .subscribe((enc) => {
-    this.router.navigate(['/encounters'])
+    this.router.navigate(['/encounters']);
 console.log('got encounter: ', enc) ;    
     });
    }
-
-
 }
 
 
