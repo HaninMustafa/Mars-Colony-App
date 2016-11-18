@@ -1,8 +1,9 @@
 <div class=encounters-page>
+    <div class="enconters-header">
     <h1>Recent Encounters</h1>
     <h2>See an alien? Report it!</h2>
-
-    <ul class="encounters">
+</div>
+    <ul class="encounters-list">
         <li *ngFor="let encounter of marsEncounters">
             <div>
             <p> {{encounter.date}} - {{ encounter.atype }}<br>
@@ -10,6 +11,7 @@
            </div>
         </li>
     </ul>
-
+<div class="encounters-footer">
     <a [routerLink]="['/report']">Report Encounter</a>
+    </div>
 </div>
