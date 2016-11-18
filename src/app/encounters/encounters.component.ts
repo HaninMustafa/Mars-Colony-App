@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Encounter } from '../models';
 import EncountersService from '../services/encounters.service'
+import AliensService from '../services/aliens.service';
+import {Alien} from '../models';
+import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn,AbstractControl} from '@angular/forms';
+import {cantBe} from '../shared/validators';
+
 
 @Component({
   selector: 'app-encounters',
@@ -9,6 +13,7 @@ import EncountersService from '../services/encounters.service'
   styleUrls: ['./encounters.component.css'],
   providers:[EncountersService]
 })
+
 export class EncountersComponent implements OnInit {
 
   marsEncounters: Encounter[];
@@ -30,3 +35,5 @@ export class EncountersComponent implements OnInit {
 
 
 }
+
+

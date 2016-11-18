@@ -1,18 +1,17 @@
 <div class="report-page">
     <h1>Report Encounter</h1>
     <h2>Saftey on Mars is your Responsibility</h2>
-    <form action="">
-        <select>
-        <option value="disabled">Select alien type</option>
-        <option value="Ectomorph">Ectomorph</option>
-        <option value="Endomorph">Endomorph</option>
-        <option value="Green man">Green man</option>
-        <option value="Grey man">Grey man</option>
-        <option value="Big-class-flat-head">Big-class-flat-head</option>
-        <option value="Octospider">Octospider</option>
-      </select>
-        <textarea placeholder="Action Taken" id rows="10"></textarea>
+    
+    <form [formGroup]="reportForm" (ngSubmit)="onSubmit($event)">
+       
+        <select formControlName="atype">
+         <option [value]="NO_TYPE_SELECTED">--Select alien type--</option> 
+         <option *ngFor ="let alien of aliensList" [value]="alien.type">{{alien.type}}</option>
+       </select>
 
-        <button class="button" ng-click="submitReport($event, reportForm)">Submit Report</button>
+        <textarea placeholder="Action Taken" rows="10" formControlName="action"></textarea>
+    
+        <button class="button" ng-click="submitReport($event)">Submit Report</button>
+  
     </form>
 </div>
