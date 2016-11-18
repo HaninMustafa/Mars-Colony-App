@@ -15,9 +15,10 @@ return value === '(none)' ? false: true;
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  styleUrls: ['./register.component.scss'],
   providers:[JobsService, ColonistsService]
 })
+
 export class RegisterComponent implements OnInit {
 
   colonist: NewColonist;
@@ -28,6 +29,7 @@ export class RegisterComponent implements OnInit {
   constructor(jobService: JobsService,    
   private colonistsService: ColonistsService,
   private router: Router
+
 ) {
 
     

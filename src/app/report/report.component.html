@@ -1,17 +1,21 @@
+
+
 <div class="report-page">
     <h1>Report Encounter</h1>
     <h2>Saftey on Mars is your Responsibility</h2>
     
     <form [formGroup]="reportForm" (ngSubmit)="onSubmit($event)">
-       
+       <fieldset>
         <select formControlName="atype">
          <option [value]="NO_TYPE_SELECTED">--Select alien type--</option> 
          <option *ngFor ="let alien of aliensList" [value]="alien.type">{{alien.type}}</option>
        </select>
 
         <textarea placeholder="Action Taken" rows="10" formControlName="action"></textarea>
-    
-        <button class="button" ng-click="submitReport($event, reportForm)">Submit Report</button>
-  
+       </fieldset>
+       
+       <fieldset>
+         <button class="button" ng-click="submitReport($event, reportForm)">Submit Report</button>
+       </fieldset>
     </form>
 </div>

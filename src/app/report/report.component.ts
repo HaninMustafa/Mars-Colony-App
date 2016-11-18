@@ -10,7 +10,7 @@ import {Router, ActivatedRoute} from '@angular/router';
   selector: 'app-report',
   templateUrl: './report.component.html',
   providers: [AliensService, EncountersService],
-  styleUrls: ['./report.component.css']
+  styleUrls: ['./report.component.scss']
 })
 
 
