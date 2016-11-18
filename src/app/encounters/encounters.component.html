@@ -4,11 +4,12 @@
 
     <ul class="encounters">
         <li *ngFor="let encounter of marsEncounters">
-            <p> {{encounter.date}} - {{ encounter.atype }}</p>
-            <p>{{ encounter.action}}</p><br>
+            <div>
+            <p> {{encounter.date}} - {{ encounter.atype }}<br>
+           {{ encounter.action}}</p>
+           </div>
         </li>
     </ul>
-
 
     <a [routerLink]="['/report']">Report Encounter</a>
 </div>
