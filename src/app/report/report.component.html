@@ -1,17 +1,17 @@
 
 
 <div class="report-page">
-    <h1>Report Encounter</h1>
-    <h2>Saftey on Mars is your Responsibility</h2>
+    <h1>Report Encounter
+    <span>Saftey on Mars is your Responsibility</span></h1>
     
-    <form [formGroup]="reportForm" (ngSubmit)="onSubmit($event)">
+    <form class="report-form" [formGroup]="reportForm" (ngSubmit)="onSubmit($event)">
        <fieldset>
-        <select formControlName="atype">
-         <option [value]="NO_TYPE_SELECTED">--Select alien type--</option> 
+        <select class="option-report" formControlName="atype">
+         <option [value]="NO_ALIEN_SELECTED">Select alien type</option> 
          <option *ngFor ="let alien of aliensList" [value]="alien.type">{{alien.type}}</option>
        </select>
 
-        <textarea placeholder="Action Taken" rows="10" formControlName="action"></textarea>
+        <textarea class="textarea-report" placeholder="Action Taken" rows="10" formControlName="action" required></textarea>
        </fieldset>
        
        <fieldset>

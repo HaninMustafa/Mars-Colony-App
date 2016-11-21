@@ -28,11 +28,8 @@ NO_ALIEN_SELECTED = '(none)';
 
 aliensService.getAliens().subscribe((aliens)=> {
   this.aliensList = aliens;
-  console.log();
-}, (err) => {
-  console.log(err);
-}); 
-}
+} )
+  }
 
   ngOnInit() {
     this.reportForm=new FormGroup({
@@ -59,7 +56,6 @@ onSubmit(event){
 
   .subscribe((enc) => {
     this.router.navigate(['/encounters']);
-console.log('got encounter: ', enc) ;    
     });
    }
 }

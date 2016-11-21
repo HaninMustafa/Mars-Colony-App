@@ -1,0 +1,68 @@
+.report-page {
+font-family: "Roboto", sans-serif;
+background: black;
+color: white;
+height: 100vh;
+display:flex;
+flex-direction: column;
+h1 {
+font-weight: 100;
+text-align: center;
+padding: 2rem 1rem;
+}}
+
+
+.report-page span{
+display: block;
+font-size: 1rem;
+}
+
+.report-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    border:0;
+    justify-content: space-between;
+}
+.option-report {
+    display: flex;
+    flex-direction: column;
+    color: red;
+    background: black;
+    outline: none;
+    -webkit-appearance:none;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+
+
+}
+fieldset {
+    border: 0;
+}
+select, textarea, button {
+    width: 100%;
+} 
+.textarea-report {
+    color: black;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+.textarea-report::-webkit-input-placeholder {
+  color: red;
+      font-size: 1rem;
+
+}
+
+.button {
+    border: none;
+    background: black;
+    color: white;
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+margin-top: 2rem;
+}
