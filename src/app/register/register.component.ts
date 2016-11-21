@@ -5,6 +5,7 @@ import JobsService from '../services/jobs.service';
 import {cantBe} from '../shared/validators';
 import {Router, ActivatedRoute} from '@angular/router';
 import ColonistsService from '../services/colonists.service';
+import { HostBinding, trigger, state, style, animate, transition } from '@angular/core';
 
 
 const notNone = (value) => {
@@ -16,10 +17,33 @@ return value === '(none)' ? false: true;
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  providers:[JobsService, ColonistsService]
+  providers:[JobsService, ColonistsService],
+  animations:[ 
+	trigger('scaleIn', [
+		state('in', style({ transform: 'translateY(0)' })),
+		transition('void => in', [
+			style({
+				height: '0px',
+				transform: 'translateY(-100vh)'
+			}),
+			animate('0ms 500ms ease', style(
+			{
+				height: 'auto'
+			})
+			),
+			animate('500ms 500ms ease', style(
+			{
+				transform: 'translateY(0)'
+			})
+			)
+			])
+		])
+	]
 })
 
 export class RegisterComponent implements OnInit {
+
+	@HostBinding('@scaleIn') hostAnimation = "in";
 
   colonist: NewColonist;
   marsJobs: Job[];
