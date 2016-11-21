@@ -1,11 +1,16 @@
 .encounters-list {
     overflow: scroll;
+    list-style-type: none;
+
 }
 .enconters-header {
     text-align: center;
     padding: 2rem 1rem;
-    font-family: "Roboto", sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
+    span {
+        display: block;
+        font-size: 1rem;
+    }
 }
 
 .encounters-page {
@@ -19,11 +24,18 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right:0;
-    margin-left: 0; 
+padding: 4rem 1rem;
+
 }
 .encounters-footer {
-    width: 100%;
     background-color: black;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    margin-top: 2rem;
     text-align: center;
+overflow: hidden;
+width: 100vh;
 }
