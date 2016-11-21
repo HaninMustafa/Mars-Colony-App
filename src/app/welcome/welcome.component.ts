@@ -6,7 +6,8 @@ import {
   state,
   style,
   transition,
-  animate
+  animate,
+  HostBinding
 } from '@angular/core';
 
 
@@ -14,13 +15,19 @@ import {
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss'],
-  //animations trigers, transition
-})
+ animations:[ 
+  trigger('scaleDown', [
+    state('in', style({ transform: 'scale(1)' })),
+    transition('in => void', [
+      animate('500ms ease', style({transform: 'scale(0)'}))
+      ])
+    ])
+  ]})
 
 export class WelcomeComponent implements OnInit {
 
 
-//adding Hostbinding
+	@HostBinding('@scaleDown') hostAnimation = "in";
 
   constructor() { }
 
