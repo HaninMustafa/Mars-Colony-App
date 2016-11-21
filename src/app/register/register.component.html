@@ -10,12 +10,12 @@
         <input class="register-input" type="number"  placeholder="Enter Age" formControlName="age"/>
      
         <select class="register-select" formControlName="job_id">
-            <option class="select1" [value]="NO_JOB_SELECTED">--Select Occupation--</option>
+            <option class="select1" [value]="NO_JOB_SELECTED">Select Occupation</option>
             <option *ngFor= "let job of marsJobs" [value]="job.id">{{job.name}}</option>
         </select>
     </fieldset>
 
-    <button>Check in</button>
+    <button class="button">Check in</button>
     
     </form>
 </div>
